@@ -203,8 +203,15 @@ public class MainActivity extends AppCompatActivity {
                 };
 
                 //Create the Date Picker Dialog
+//                TimePickerDialog myTimeDialog = new TimePickerDialog(MainActivity.this,
+//                        myTimeListener, 20, 00, true);
+
+                // Create the Date Picker Dialog to show the current date when it first appears
+                Calendar now = Calendar.getInstance();
+                int hourOfDay = now.get(Calendar.HOUR_OF_DAY);  // Current Hour
+                int minute = now.get(Calendar.MINUTE);  // Current Minute
                 TimePickerDialog myTimeDialog = new TimePickerDialog(MainActivity.this,
-                        myTimeListener, 20, 00, true);
+                        myTimeListener, hourOfDay, minute, true);
 
                 myTimeDialog.show();
             }
